@@ -1,0 +1,213 @@
+/* Dashboard.css */
+.dashboard-page {
+  padding: 10px;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+/* System Status Card */
+.system-status-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+  border-left: 5px solid var(--primary-color);
+}
+
+.system-status-card .card-title {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Sensor Cards */
+.sensor-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+}
+
+.sensor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.sensor-card.alert-active {
+  border-top-color: var(--danger-color);
+  animation: pulse 2s infinite;
+}
+
+.sensor-card.alert-warning {
+  border-top-color: var(--warning-color);
+}
+
+.sensor-card.alert-danger {
+  border-top-color: var(--danger-color);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 5px 20px rgba(231, 74, 59, 0.1); }
+  50% { box-shadow: 0 5px 30px rgba(231, 74, 59, 0.3); }
+  100% { box-shadow: 0 5px 20px rgba(231, 74, 59, 0.1); }
+}
+
+.sensor-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Sensor Readings */
+.sensor-readings {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fc;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.reading-item {
+  text-align: center;
+}
+
+.reading-item small {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.reading-item span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* GPS Coordinates */
+.gps-coordinates {
+  background: #f8f9fc;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.coordinate-item {
+  margin-bottom: 10px;
+}
+
+.coordinate-item:last-child {
+  margin-bottom: 0;
+}
+
+.coordinate-item small {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.coordinate-item span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  font-family: 'Courier New', monospace;
+}
+
+/* Analytics Cards */
+.analytics-card {
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.analytics-card h6 {
+  color: var(--dark-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Alert Summary */
+.alert-summary-item {
+  background: white;
+  transition: all 0.3s;
+}
+
+.alert-summary-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.alert-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* System Info */
+.system-info .info-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.system-info .info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Dashboard Footer */
+.dashboard-footer {
+  padding: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 20px;
+  }
+  
+  .sensor-readings,
+  .gps-coordinates {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reading-item,
+  .coordinate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .reading-item small,
+  .coordinate-item small {
+    margin-bottom: 0;
+  }
+}

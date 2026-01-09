@@ -1,0 +1,14 @@
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .d-flex {
+      flex-direction: column;
+    }
+    
+    .flex-grow-1 {
+      width: 100%;
+    }
+    
+    .map-container {
+      height: 300px !important;
+    }
+  }
