@@ -98,7 +98,7 @@ export default function Dashboard() {
       unsubscribe();
       clearInterval(checkInterval);
     };
-  }, [lastUpdate]);
+  }, []);
 
   // Prepare acceleration chart data
   const accelerationChartData = {
